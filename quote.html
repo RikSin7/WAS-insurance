@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Select Your Plan | WAS Travel Insurance</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Choose the perfect travel insurance plan for your trip. Compare Voyager and Voyager Plus plans with comprehensive coverage options.">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/voyager-logo.svg">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="./css/output.css" as="style">
+
+    <!-- Styles -->
+    <link href="./css/output.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="antialiased bg-gray-50 min-h-screen flex flex-col">
+
+    <!-- Skip to main content (Accessibility) -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white px-4 py-2 rounded shadow z-50">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="bg-[#0B254B] text-white">
+        <div class="max-w-[1296px] mx-auto px-6 h-[60px] flex items-center justify-between">
+            <a href="./index.html" class="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
+                aria-label="Go back to home page">
+                <img src="./assets/images/hero/back.svg" alt="" class="w-4 h-4" aria-hidden="true" />
+                Back
+            </a>
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a href="./index.html" aria-label="WAS Insurance Home">
+                    <img src="./assets/images/hero/logo-white.svg" alt="WAS Insurance Logo"
+                        class="h-6 hidden md:block" />
+                    <img src="./assets/images/hero/logo-white-mob.svg" alt="WAS Insurance Logo" class="h-6 md:hidden" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <nav class="bg-white border-b border-gray-200 py-6" aria-label="Checkout progress">
+        <div class="max-w-[1296px] mx-auto px-6">
+            <ol class="flex items-center justify-between" role="list">
+
+                <!-- Step 1: Completed -->
+                <li class="flex flex-col items-center z-10">
+                    <div class="md:w-8 md:h-8 h-6 w-6 rounded-full bg-[#0078D4] flex items-center justify-center mb-2"
+                        aria-hidden="true">
+                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <span class="text-xs text-[#0B254B] font-medium">Get Quote</span>
+                </li>
+
+                <li class="flex-1 h-0.5 bg-[#0078D4] relative top-[-12px] -mx-1" aria-hidden="true"></li>
+
+                <!-- Step 2: Current -->
+                <li class="flex flex-col items-center z-10" aria-current="step">
+                    <img src="./assets/images/steps/plane.svg" alt="" class="md:w-8 md:h-8 w-6 h-6 mb-2"
+                        aria-hidden="true">
+                    <span class="text-xs text-[#0078D4] font-medium">Plan Option</span>
+                </li>
+
+                <li class="flex-1 h-0.5 bg-gray-200 relative top-[-12px] -mx-1" aria-hidden="true"></li>
+
+                <!-- Step 3: Pending -->
+                <li class="flex flex-col items-center z-10">
+                    <div class="md:w-8 md:h-8 w-6 h-6 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center mb-2"
+                        aria-hidden="true"></div>
+                    <span class="text-xs text-gray-400 font-medium">Travellers</span>
+                </li>
+
+                <li class="flex-1 h-0.5 bg-gray-200 relative top-[-12px] -mx-1" aria-hidden="true"></li>
+
+                <!-- Step 4: Pending -->
+                <li class="flex flex-col items-center z-10">
+                    <div class="md:w-8 md:h-8 w-6 h-6 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center mb-2"
+                        aria-hidden="true"></div>
+                    <span class="text-xs text-gray-400 font-medium">Payment</span>
+                </li>
+
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-1">
+        <div class="max-w-[1296px] mx-auto px-6 py-8">
+
+            <!-- Trip Summary (Desktop) -->
+            <div class="md:flex hidden items-center justify-between mb-12 text-xs md:text-sm text-gray-500">
+                <div><span class="font-bold text-[#0B254B]">Destination(s):</span> Australia</div>
+                <div class="hidden md:block w-px h-4 bg-gray-300" aria-hidden="true"></div>
+                <div><span class="font-bold text-[#0B254B]">Dates:</span> 04/11/2025 - 13/11/2025</div>
+                <div class="hidden md:block w-px h-4 bg-gray-300" aria-hidden="true"></div>
+                <div><span class="font-bold text-[#0B254B]">Traveller Ages:</span> 23</div>
+                <button
+                    class="text-[#3b82f6] border border-[#3b82f6] rounded px-3 py-1 hover:bg-blue-50 transition-colors"
+                    aria-label="Edit trip details">
+                    Edit
+                </button>
+            </div>
+
+            <!-- Dynamic Step Content -->
+            <div id="step-content" role="region" aria-label="Plan selection"></div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B254B] text-white py-4 mt-auto">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-20 flex flex-wrap items-center justify-between gap-4 text-sm">
+            <span class="text-gray-400">©2025 WAS Insurance. All Rights Reserved.</span>
+            <nav class="flex items-center gap-4" aria-label="Footer navigation">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <span class="text-gray-500" aria-hidden="true">|</span>
+                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Load step content on page ready
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('./partials/steps/step-1-plan.html')
+                .then(res => res.text())
+                .then(html => {
+                    const container = document.getElementById('step-content');
+                    container.innerHTML = html;
+
+                    // Re-run inline scripts
+                    container.querySelectorAll('script').forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = oldScript.textContent;
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+                })
+                .catch(err => console.error('Error loading step:', err));
+        });
+    </script>
+
+</body>
+
+</html>

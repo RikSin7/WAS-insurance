@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travel Insurance – Get Quote | WAS Insurance</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Get comprehensive travel insurance quotes in minutes. Compare single and multi-trip plans with coverage for medical emergencies, trip cancellation, and more.">
+    <meta name="keywords"
+        content="travel insurance, trip insurance, travel coverage, holiday insurance, medical travel insurance">
+    <meta name="author" content="WAS Insurance">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Travel Insurance – Get Quote | WAS Insurance">
+    <meta property="og:description"
+        content="Get comprehensive travel insurance quotes in minutes. Compare plans with worldwide coverage.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/voyager-logo.svg">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="./assets/images/hero/hero.png" as="image">
+    <link rel="preload" href="./css/output.css" as="style">
+
+    <!-- Styles -->
+    <link href="./css/output.css" rel="stylesheet" />
+
+    <!-- Fonts (with display=swap for better performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Saira:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="antialiased text-[#0B254B]">
+
+    <!-- Skip to main content (Accessibility) -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white px-4 py-2 rounded shadow">
+        Skip to main content
+    </a>
+
+    <!-- Navigation -->
+    <div id="hero-navbar"></div>
+
+    <main id="main-content">
+        <section class="relative w-full bg-gray-50 md:bg-transparent">
+
+            <!-- Hero Background (Desktop) - LCP Image -->
+            <img src="./assets/images/hero/hero.png" alt="Happy family enjoying vacation on a tropical beach"
+                class="absolute inset-0 w-full h-full object-cover hidden md:block" fetchpriority="high" />
+            <div class="absolute inset-0 bg-white/10 hidden md:block"></div>
+
+            <div class="relative max-w-[1920px] mx-auto px-0 lg:px-20 md:pt-[125px] pt-[60px]">
+
+                <!-- Desktop Layout -->
+                <div class="hidden md:flex flex-col items-center text-center">
+                    <p class="uppercase tracking-widest text-2xl mb-4 font-normal font-saira text-[#212529]">
+                        Breaking the limits of traditional travel insurance
+                    </p>
+                    <h1 class="text-4xl font-bold mb-8">
+                        Find the Right Plan for You
+                    </h1>
+                    <div id="desktop-quote-form-container" class="w-full max-w-[500px] relative pb-20"></div>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="md:hidden flex flex-col">
+                    <div class="w-full">
+                        <img src="./assets/images/hero/hero.png"
+                            alt="Happy family enjoying vacation on a tropical beach"
+                            class="w-full h-[250px] sm:h-[350px] object-cover" fetchpriority="high" />
+                    </div>
+                    <div class="p-4 -mt-10 relative z-10">
+                        <h1 class="text-xl font-bold mb-4 text-[#0B254B] text-center sr-only">
+                            Find the Right Plan for You
+                        </h1>
+                        <div id="mobile-quote-form-container"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts (defer for better performance) -->
+    <script src="./js/navbar.js" defer></script>
+    <script src="./js/form.js" defer></script>
+
+    <script>
+        /**
+         * Load an HTML partial into a container element
+         */
+        async function loadPartial(elementId, filePath, callback) {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+
+                const html = await response.text();
+                const container = document.getElementById(elementId);
+
+                if (container) {
+                    container.innerHTML = html;
+
+                    // Re-run any inline scripts in the partial
+                    container.querySelectorAll('script').forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = oldScript.textContent;
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+
+                    if (callback) callback();
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Load partials after DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPartial('hero-navbar', './partials/hero-navbar.html', initNavbar);
+            loadPartial('desktop-quote-form-container', './partials/form.html', initForm);
+            loadPartial('mobile-quote-form-container', './partials/form.html');
+        });
+    </script>
+
+</body>
+
+</html>

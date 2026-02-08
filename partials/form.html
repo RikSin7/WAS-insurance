@@ -1,0 +1,176 @@
+<!-- Quote Form Component -->
+<div class="w-full max-w-[500px] mx-auto relative font-sans text-[#0B254B]">
+
+    <!-- Tab Buttons -->
+    <div class="flex items-end">
+        <div class="bg-white rounded-t-[10px]">
+            <button id="tab-single"
+                class="px-8 py-3.5 bg-white text-[#0B254B] font-bold text-sm rounded-t-[10px] relative">
+                Single Trip
+            </button>
+            <button id="tab-multi"
+                class="px-8 py-3.5 bg-[#FDBA2E] text-[#0B254B] font-bold text-sm rounded-tr-[10px] ml-1 hover:bg-[#eeb12c] transition-colors">
+                Multi Trip
+            </button>
+        </div>
+    </div>
+
+    <!-- Form Card -->
+    <div class="bg-white p-6 md:p-8 rounded-b-lg rounded-tr-lg rounded-tl-none shadow-2xl relative z-0">
+        <form onsubmit="event.preventDefault(); window.location.href='quote.html'" class="space-y-5">
+
+            <!-- Destination Field -->
+            <div class="relative group" id="destination-wrapper">
+                <label class="block mb-2 font-bold text-[#0B254B] text-base text-start">
+                    Where are you travelling?
+                </label>
+
+                <div class="relative">
+                    <input type="text" id="destination-input" onclick="toggleDropdown()" oninput="filterDestinations()"
+                        class="w-full bg-white border border-gray-300 rounded-lg px-4 h-12 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#0B254B] focus:ring-1 focus:ring-[#0B254B] transition-all cursor-pointer"
+                        placeholder="Type or choose your destinations" autocomplete="off">
+
+                    <div id="chevron-icon"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none transition-transform duration-200">
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="#4B5563" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 1.5L6 6.5L11 1.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Selected Destination Chips -->
+                <div id="selected-chips" class="flex flex-wrap gap-2 mt-3">
+                    <span
+                        class="chip-item inline-flex items-center gap-2 bg-[#0B254B] text-white text-xs font-medium px-3 py-1.5 rounded-md"
+                        data-value="Austria">
+                        Austria
+                        <button type="button" onclick="removeChip(this)" aria-label="Remove Austria"
+                            class="hover:text-red-300 flex items-center justify-center">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" class="brightness-0 invert">
+                                <path d="M1 1L7 7M7 1L1 7" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </span>
+                    <span
+                        class="chip-item inline-flex items-center gap-2 bg-[#0B254B] text-white text-xs font-medium px-3 py-1.5 rounded-md"
+                        data-value="Bali (Indonesia)">
+                        Bali (Indonesia)
+                        <button type="button" onclick="removeChip(this)" aria-label="Remove Bali"
+                            class="hover:text-red-300 flex items-center justify-center">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" class="brightness-0 invert">
+                                <path d="M1 1L7 7M7 1L1 7" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </span>
+                    <span
+                        class="chip-item inline-flex items-center gap-2 bg-[#0B254B] text-white text-xs font-medium px-3 py-1.5 rounded-md"
+                        data-value="Canada">
+                        Canada
+                        <button type="button" onclick="removeChip(this)" aria-label="Remove Canada"
+                            class="hover:text-red-300 flex items-center justify-center">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" class="brightness-0 invert">
+                                <path d="M1 1L7 7M7 1L1 7" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </span>
+                </div>
+
+                <!-- Destination Dropdown -->
+                <div id="destination-dropdown"
+                    class="hidden absolute top-[85px] left-0 w-full bg-white border border-gray-200 rounded-lg shadow-xl z-50 max-h-[300px] overflow-y-auto">
+
+                    <div class="p-2">
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider px-3 py-2">Popular
+                            Destinations</div>
+                        <ul>
+                            <li onclick="addChip('Bali (Indonesia)')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                Bali (Indonesia)</li>
+                            <li onclick="addChip('New Zealand')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                New Zealand</li>
+                            <li onclick="addChip('USA (United States)')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                USA (United States)</li>
+                            <li onclick="addChip('United Kingdom')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                United Kingdom</li>
+                        </ul>
+                    </div>
+
+                    <div class="h-px bg-gray-100 mx-2"></div>
+
+                    <div class="p-2">
+                        <ul>
+                            <li onclick="addChip('World Wide')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                World Wide</li>
+                            <li onclick="addChip('All of Europe')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                All of Europe</li>
+                            <li onclick="addChip('All of Asia')"
+                                class="px-3 py-2.5 hover:bg-gray-50 cursor-pointer text-sm font-medium text-[#0B254B] rounded-md transition-colors">
+                                All of Asia</li>
+                        </ul>
+                    </div>
+
+                    <div id="no-results" class="hidden p-4 text-center text-gray-500 text-sm">
+                        Destination not found
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date Fields -->
+            <div class="space-y-4">
+                <div>
+                    <label class="block mb-2 font-bold text-[#0B254B] text-base text-start">When do you leave?</label>
+                    <input type="date"
+                        class="w-full bg-white border border-gray-300 rounded-lg px-4 h-12 text-gray-700 focus:outline-none focus:border-[#0B254B] focus:ring-1 focus:ring-[#0B254B] transition-all">
+                </div>
+                <div>
+                    <label class="block mb-2 font-bold text-[#0B254B] text-base text-start">When do you return?</label>
+                    <input type="date"
+                        class="w-full bg-white border border-gray-300 rounded-lg px-4 h-12 text-gray-700 focus:outline-none focus:border-[#0B254B] focus:ring-1 focus:ring-[#0B254B] transition-all">
+                </div>
+            </div>
+
+            <!-- Traveller Ages -->
+            <div>
+                <label class="block mb-2 font-bold text-[#0B254B] text-base text-start">Current age of all
+                    Travellers?</label>
+                <div class="flex flex-wrap items-center gap-3" id="traveller-container">
+                    <div class="w-20">
+                        <input type="number" min="0" max="100"
+                            class="w-full bg-white border border-gray-300 rounded-lg h-12 text-center text-gray-700 focus:outline-none focus:border-[#0B254B] focus:ring-1 focus:ring-[#0B254B]"
+                            placeholder="Age">
+                    </div>
+                    <button type="button" onclick="addTraveller()" aria-label="Add another traveller"
+                        class="w-12 h-12 bg-[#FDBA2E] rounded-lg flex items-center justify-center hover:bg-[#eeb12c] transition-colors shadow-sm text-[#0B254B]">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 1V13M1 7H13" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Promo Code -->
+            <div>
+                <input type="text"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 h-12 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#0B254B] focus:ring-1 focus:ring-[#0B254B]"
+                    placeholder="Promo Code">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="block w-full bg-[#FDBA2E] py-4 rounded-lg font-bold text-[#0B254B] text-center hover:bg-[#eeb12c] transition-colors shadow-sm text-sm tracking-wide mt-4 uppercase">
+                Get a Quote
+            </button>
+        </form>
+    </div>
+
+</div>

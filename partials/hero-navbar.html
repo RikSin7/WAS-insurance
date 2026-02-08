@@ -1,0 +1,229 @@
+<header id="main-header" class="absolute top-0 left-0 w-full z-20 transition-colors duration-300">
+  <div
+    class="max-w-[1920px] mx-auto px-6 lg:px-0 h-[60px] md:h-[80px] flex items-center justify-between lg:justify-around">
+
+    <!-- Logo -->
+    <div class="flex items-center cursor-pointer">
+      <a href="../index.html">
+        <img id="header-logo" src="./assets/images/hero/logo.svg" alt="WAS Insurance - Home"
+          class="md:max-w-[177px] md:max-h-[45px] h-8 md:h-12" />
+        <img id="header-logo-white" src="./assets/images/hero/logo-white.svg" alt="WAS Insurance - Home"
+          class="md:max-w-[177px] md:max-h-[45px] h-8 md:h-12 hidden" />
+      </a>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-10 text-base font-bold">
+      <button class="nav-item has-dropdown flex items-center gap-1" data-dropdown="travel">
+        Travel Insurance
+        <!-- Down arrows (default) -->
+        <img src="./assets/images/hero/down-arrow.svg" alt="down-arrow" class="arrow-down w-3 h-3" />
+        <img src="./assets/images/hero/down-arrow-white.svg" alt="down-arrow" class="arrow-down-white w-3 h-3 hidden" />
+        <!-- Up arrows (on hover) -->
+        <img src="./assets/images/hero/up-arrow.svg" alt="up-arrow" class="arrow-up w-3 h-3 hidden" />
+        <img src="./assets/images/hero/up-arrow-white.svg" alt="up-arrow" class="arrow-up-white w-3 h-3 hidden" />
+      </button>
+      <button class="nav-item">Emergency Assistance</button>
+      <button class="nav-item has-dropdown flex items-center gap-1" data-dropdown="service">
+        Customer Service
+        <!-- Down arrows (default) -->
+        <img src="./assets/images/hero/down-arrow.svg" alt="down-arrow" class="arrow-down w-3 h-3" />
+        <img src="./assets/images/hero/down-arrow-white.svg" alt="down-arrow" class="arrow-down-white w-3 h-3 hidden" />
+        <!-- Up arrows (on hover) -->
+        <img src="./assets/images/hero/up-arrow.svg" alt="up-arrow" class="arrow-up w-3 h-3 hidden" />
+        <img src="./assets/images/hero/up-arrow-white.svg" alt="up-arrow" class="arrow-up-white w-3 h-3 hidden" />
+      </button>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="lg:hidden w-8 h-8 flex items-center justify-center"
+      aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <!-- Hamburger Icon -->
+      <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <!-- Close Icon (hidden by default) -->
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu"
+  class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+  <div class="h-full flex flex-col">
+
+    <!-- Mobile Header -->
+    <div class="flex items-center justify-between px-6 h-[60px] border-b border-gray-100">
+      <img src="./assets/images/hero/logo.svg" alt="Logo" class="h-8" />
+      <button id="mobile-menu-close" class="w-8 h-8 flex items-center justify-center" aria-label="Close mobile menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items -->
+    <nav class="flex-1 overflow-y-auto px-6 py-6">
+
+      <!-- Travel Insurance (Accordion) -->
+      <div class="mobile-accordion border-b border-gray-100">
+        <button class="mobile-accordion-toggle w-full flex items-center justify-between py-4 text-left"
+          data-accordion="travel">
+          <span class="text-[#C53030] font-medium">Travel Insurance</span>
+          <svg class="accordion-arrow w-4 h-4 text-[#C53030] transition-transform" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-content pl-4 pb-4" id="accordion-travel">
+          <ul class="space-y-3">
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Plans</a></li>
+            <li><a href="#"
+                class="block text-sm text-[#0B254B] hover:text-[#C53030] border border-[#0B254B] px-2 py-1 w-fit">Upgrades</a>
+            </li>
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Traveller Type</a></li>
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Trip Type</a></li>
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Benefits</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Emergency Assistance -->
+      <div class="border-b border-gray-100">
+        <a href="#" class="block py-4 text-[#0B254B] font-medium">Emergency Assistance</a>
+      </div>
+
+      <!-- Customer Service (Accordion) -->
+      <div class="mobile-accordion border-b border-gray-100">
+        <button class="mobile-accordion-toggle w-full flex items-center justify-between py-4 text-left"
+          data-accordion="service">
+          <span class="text-[#0B254B] font-medium">Customer Service</span>
+          <svg class="accordion-arrow w-4 h-4 text-gray-500 transition-transform rotate-180" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-content hidden pl-4 pb-4" id="accordion-service">
+          <ul class="space-y-3">
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Contact Us</a></li>
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Make a Claim</a></li>
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">FAQs</a></li>
+            <li><a href="#" class="block text-sm text-[#0B254B] hover:text-[#C53030]">Policy Documents</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Mobile Footer -->
+    <div class="bg-[#0B254B] text-white text-center py-4 text-xs">
+      ©2025 Logo Ipsum. All Rights Reserved.
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Background Dim Overlay -->
+<div id="dropdown-overlay"
+  class="fixed inset-0 bg-black/80 z-[5] opacity-0 invisible transition-all duration-300 top-[60px] md:top-[80px]">
+</div>
+
+<!-- Dropdown Mega Menu -->
+<div id="dropdown-container"
+  class="fixed left-0 w-full z-10 opacity-0 invisible transition-all duration-300 top-[60px] md:top-[80px]">
+
+  <!-- Travel Insurance Dropdown -->
+  <div id="dropdown-travel" class="dropdown-panel hidden bg-white" style="height: 353px;">
+    <div class="max-w-[1920px] mx-auto px-6 lg:px-44 h-full">
+      <div class="flex items-center justify-around gap-12 h-full py-10">
+
+        <!-- Left: Image (317x264) -->
+        <div class="flex-shrink-0">
+          <img src="./assets/images/hero/fam.png" alt="Happy family planning their vacation" class="object-cover"
+            loading="lazy" style="width: 317px; height: 264px;" />
+        </div>
+
+        <!-- Middle: Content with divider -->
+        <div class="flex items-center gap-12 flex-1">
+          <div class="flex flex-col justify-center pr-12 flex-1">
+            <h3 class="text-2xl font-semibold text-[#0B254B] mb-4">Travel Insurance</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida tincidunt mi, in bibendum sapien
+              pellentesque vitae. Vestibulum quis purus neque. Nam condimentum in lorem id facilisis.
+            </p>
+            <button onclick="submitForm()"
+              class="w-fit bg-[#F5C451] px-6 py-3 rounded-md font-semibold text-sm text-[#0B254B] hover:bg-[#e5b341] transition-colors">
+              GET A QUOTE
+            </button>
+          </div>
+
+          <!-- Divider that matches content height -->
+          <div class="self-stretch w-px bg-[#EEEEEE]"></div>
+
+          <!-- Right: Links (no bullets) -->
+          <div class="flex flex-col justify-center pl-12">
+            <ul class="space-y-4 font-bold">
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Plans</a></li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Upgrades</a></li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Traveller Type</a>
+              </li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Trip Type</a></li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Benefits</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Service Dropdown -->
+  <div id="dropdown-service" class="dropdown-panel hidden bg-white" style="height: 353px;">
+    <div class="max-w-[1920px] mx-auto px-6 lg:px-44 h-full">
+      <div class="flex items-center justify-around gap-12 h-full py-10">
+
+        <!-- Left: Image (317x264) -->
+        <div class="flex-shrink-0">
+          <img src="./assets/images/hero/hero.png" alt="Customer support team ready to help" class="object-cover"
+            loading="lazy" style="width: 317px; height: 264px;" />
+        </div>
+
+        <!-- Middle: Content with divider -->
+        <div class="flex items-center gap-12 flex-1">
+          <div class="flex flex-col justify-center pr-12 flex-1">
+            <h3 class="text-2xl font-semibold text-[#0B254B] mb-4">Customer Service</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              Get the help you need, when you need it. Our dedicated support team is available 24/7 to assist you with
+              claims, policy questions, and travel emergencies.
+            </p>
+            <button
+              class="w-fit bg-[#F5C451] px-6 py-3 rounded-md font-semibold text-sm text-[#0B254B] hover:bg-[#e5b341] transition-colors">
+              CONTACT US
+            </button>
+          </div>
+
+          <!-- Divider that matches content height -->
+          <div class="self-stretch w-px bg-[#EEEEEE]"></div>
+
+          <!-- Right: Links (no bullets) -->
+          <div class="flex flex-col justify-center pl-12">
+            <ul class="space-y-4 font-bold">
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Contact Us</a></li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Make a Claim</a>
+              </li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">FAQs</a></li>
+              <li><a href="#" class="text-sm text-[#002B45] hover:text-[#002B45] transition-colors">Policy Documents</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
