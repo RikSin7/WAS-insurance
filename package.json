@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "WAS Insurance website",
   "scripts": {
-    "dev": "npx tailwindcss -i ./css/tailwind.css -o ./css/output.css --watch",
-    "build": "npx tailwindcss -i ./css/tailwind.css -o ./css/output.css --minify"
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/output.css --minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
